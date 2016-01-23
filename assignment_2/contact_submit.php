@@ -1,7 +1,4 @@
 <?php include('./includes/header.php'); ?>
-
-<h2>Message Sent</h2>
-
 <?php if (isset($_POST['submit'])): ?>
 
   <?php
@@ -18,7 +15,7 @@
         <title>Success</title>
       </head>
       <body>
-        <h1>Hello $user_name</h1>
+        <h1>Hello $user_first_name</h1>
         <h3>This is the message you sent</h3>
         <p>$user_message</p>
       </body>
@@ -26,29 +23,41 @@
     ";
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
-    $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
     mail($to, $subject, $message, $headers);
   ?>
-
-  <p>
-    <strong>First Name:</strong>
-    <?= $user_first_name ?>
-  </p>
-  <p>
-    <strong>Last Name:</strong>
-    <?= $user_last_name ?>
-  </p>
-  <p>
-    <strong>Subject:</strong>
-    <?= $user_subject ?>
-  </p>
-  <p>
-    <strong>Message:</strong>
-    <?= $user_message ?>
-  </p>
 <?php else: ?>
   <?php header('Location: index.php'); ?>
 <?php endif ?>
+
+<div class="row">
+  <div class="card col s6 push-s3">
+    <div class="card-content">
+      <span class="card-title">Message sent</span>
+      <div class="card-content">
+        <p>
+          <strong>First Name:</strong>
+          <?= $user_first_name ?>
+        </p>
+        <p>
+          <strong>Last Name:</strong>
+          <?= $user_last_name ?>
+        </p>
+        <p>
+          <strong>Subject:</strong>
+          <?= $user_subject ?>
+        </p>
+        <p>
+          <strong>Message:</strong>
+          <?= $user_message ?>
+        </p>
+        <div class="card-action">
+          <a class="waves-effect btn blue accent-1" href="index.php">Back to home page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php include('./includes/footer.php'); ?>

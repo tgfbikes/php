@@ -1,24 +1,30 @@
 <?php include('./includes/header.php'); ?>
-<h1>Contact</h1>
-  <div class="card">
-    <div class="card-content">
-      <form method="post" action="contact_submit.php">
-        <div class="input-field">
-          <input type="text" id="first_name" name="first_name">
-          <label for="first_name">First name</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="last_name" name="last_name">
-          <label for="last_name">Last name</label>
-        </div>
-        <div class="input-field">
-          <textarea id="textarea" name="message"></textarea>
-          <label for="textarea">Message</label>
-        </div>
-        <div class="card-action">
-          <input class="waves-effect waves-light btn" type="submit" name="submit" value="Send email">
-        </div>
-      </form>
+
+  <div class="row">
+    <div class="card col s6 push-s3">
+      <div class="card-content">
+        <span class="card-title">Send us an email</span>
+        <form method="post" action="contact_submit.php">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="First name" type="text" id="first_name" name="first_name" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Last name" type="text" id="last_name" name="last_name" class="validate">
+            </div>
+          </div>
+          <div class="input-field">
+            <input placeholder="Subject" type="text" name="subject" class="validate">
+          </div>
+          <div class="input-field">
+            <textarea placeholder="Your message you would like to send" id="textarea" class="materialize-textarea" name="message"></textarea>
+          </div>
+          <div class="card-action">
+            <button class="waves-effect btn blue accent-1" type="submit" name="submit">Submit email</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+
 <?php include('./includes/footer.php'); ?>
