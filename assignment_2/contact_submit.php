@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include('./includes/header.php'); ?>
 
 <h2>Message Sent</h2>
 
@@ -51,4 +51,4 @@
   <?php header('Location: index.php'); ?>
 <?php endif ?>
 
-<?php include('includes/footer.php'); ?>
+<?php include('./includes/footer.php'); ?>
