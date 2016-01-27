@@ -1,8 +1,11 @@
 <?php include('./includes/header.php'); ?>
 
 <?php 
-  if (!isset($_SESSION['num_email_sent']) {
-    $_SESSION['num_emails_sent'] = 0; ?>
+  if (!isset($_SESSION['num_email_sent'])) {
+    $_SESSION['num_emails_sent'] = 0;
+  }
+  if (!isset($_SESSION['first_name'])) {
+    $_SESSION['first_name'] = $_POST['first_name'];
   }
 ?>
 

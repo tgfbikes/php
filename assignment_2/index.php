@@ -1,9 +1,18 @@
 <?php include('./includes/header.php'); ?>
+  <?php
+    if (isset($_SESSION['first_name'])) {
+      $first_name = $_SESSION['first_name'];
+    }
+  ?>
 
   <div class="row">
     <div class="card col s6 push-s3">
       <div class="card-content">
-        <span class="card-title">Send us an email</span>
+        <?php if (isset($first_name)): ?>
+          <span class="card-title">Would you like to send another email <?= $first_name ?>?</span>
+        <?php else: ?>
+          <span class="card-title">Send us an email</span>
+        <?php endif ?>
         <form method="post" action="contact_submit.php">
           <div class="row">
             <div class="input-field col s6">
