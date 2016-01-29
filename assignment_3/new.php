@@ -41,7 +41,9 @@
             <input type="number" name="revenue">
           </div>
           <div class="card-action">
-            <button class="waves-effect btn teal accent-2" type="submit" name="submit">Add to DB</button>
+            <button class="waves-effect btn teal accent-2" type="submit" name="submit">
+              <span class="pink-text">Add to DB</span>
+            </button>
           </div>
         </form>
       </div>
