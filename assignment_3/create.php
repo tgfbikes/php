@@ -16,6 +16,7 @@
     $mysql_connection = mysqli_connect('mysql.cs.dixie.edu', 'sking', 'P@$$word', 'sking');
     
     $sql = "INSERT INTO retro_games (title, genre, date_of_release, console, developer, rating, revenue) VALUES ('$title', '$genre', '$date_of_release', '$console', '$developer', '$rating', '$revenue')";
+    
     mysqli_query($mysql_connection, $sql);
     
   } else {
