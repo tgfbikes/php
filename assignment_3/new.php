@@ -11,38 +11,34 @@
         <span class="card-title">Do some queries</span>
         <form method="post" action="create.php">
           <div class="input-field">
-            Title:
-            <input type="text" id="title" name="title">
+            First name:
+            <input type="text" name="first_name">
           </div>
           <div class="input-field">
-            Genre:
-            <input type="text" id="genre" name="genre">
+            Middle name:
+            <input type="text" name="middle_name">
           </div>
           <div class="input-field">
-            Release date:
-            <input type="date" class="datepicker" name="date_of_release">
+            Sex:
+            <input type="text" name="sex">
           </div>
           <div class="input-field">
-            Console:
-            <input type="text" name="console">
+            Birth date:
+            <input type="date" class="datepicker" name="birth">
           </div>
           <div class="input-field">
-            Developer:
-            <input type="text" name="developer">
-          </div>
-          <div class="input-field">
-            Rating:
+            Age:
             <p class="range-field">
-              <input id="test5" type="range" name="rating" min="0" max="10">
+              <input type="range" name="age" min="0" max="100">
             </p>
           </div>
           <div class="input-field">
-            Revenue:
-            <input type="number" name="revenue">
+            Favorite color:
+            <input type="text" name="favorite_color">
           </div>
           <div class="card-action">
             <button class="waves-effect btn teal accent-2" type="submit" name="submit">
-              <span class="pink-text">Add to DB</span>
+              <span class="pink-text">Add child</span>
             </button>
           </div>
         </form>
