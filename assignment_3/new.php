@@ -2,13 +2,13 @@
 
   <div class="row">
     <div class="col s6 push-s3">
-      <h1>New</h1>
+      <h1>Add New Child</h1>
     </div>
   </div>
   <div class="row">
     <div class="card col s6 push-s3">
       <div class="card-content">
-        <span class="card-title">Do some queries</span>
+        <span class="card-title">Child's information</span>
         <form method="post" action="create.php">
           <div class="input-field">
             First name:
