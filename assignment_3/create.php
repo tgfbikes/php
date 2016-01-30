@@ -20,7 +20,7 @@
     '$sex', 
     '$birth', 
     '$age', 
-    '$favorite_color', 
+    '$favorite_color'
     )";
     
     mysqli_query($mysql_connection, $sql);
