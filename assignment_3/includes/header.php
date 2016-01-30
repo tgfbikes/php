@@ -11,7 +11,7 @@
   <nav class="pink">
     <div class="nav-wrapper">
       <div class="row">
-        <div class="col s4">
+        <div class="col s3">
           <a href="#" class="brand-logo">I got kids</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="./index.php">Home</a></li>
