@@ -8,7 +8,7 @@
     mysqli_query($mysql_connection, $sql);
     header('Location: index.php');
   } else {
-    header('Location: index.php')
+    header('Location: index.php');
   }
 
   include('../includes/footer.php');
