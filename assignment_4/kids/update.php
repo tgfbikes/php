@@ -3,7 +3,7 @@
 <?php 
   if (isset($_POST['submit'])) {
     // get values from $_POST
-    $id             = $_POST
+    $id             = $_POST['id'];
     $first_name     = $_POST['first_name'];
     $middle_name    = $_POST['middle_name'];
     $sex            = $_POST['sex'];

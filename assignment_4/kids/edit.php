@@ -15,7 +15,7 @@
     <div class="card col s6 push-s3">
       <div class="card-content">
         <span class="card-title">Edit <?= $row['first_name'] ?></span>
-        <form method="post" action="create.php">
+        <form method="post" action="update.php">
           <div class="input-field">
             First name:
             <input type="text" name="first_name" value="<?= $row['first_name'] ?>">
