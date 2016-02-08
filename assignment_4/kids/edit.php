@@ -5,60 +5,53 @@
 
   $id = $_GET['id'];
   $sql = "SELECT * FROM kids WHERE id = '$id'";
-  $result = mysqli_query($mysqli_connection, $sql);
+  $result = mysqli_query($mysql_connection, $sql);
   $row = mysqli_fetch_array($result);
 
 ?>
 
-<h1>Show a child</h1>
-
-<?php if ($row = mysqli_fetch_array($result)): ?>
-  <div class="row">
-    <div class="col s6 push-s3">
-      <h1>Edit a Child</h1>
-    </div>
-  </div>
+<?php if ($row): ?>
   <div class="row">
     <div class="card col s6 push-s3">
       <div class="card-content">
-        <span class="card-title">Edit child's information</span>
+        <span class="card-title">Edit <?= $row['first_name'] ?></span>
         <form method="post" action="create.php">
           <div class="input-field">
             First name:
-            <input type="text" name="first_name">
+            <input type="text" name="first_name" value="<?= $row['first_name'] ?>">
           </div>
           <div class="input-field">
             Middle name:
-            <input type="text" name="middle_name">
+            <input type="text" name="middle_name" value="<?= $row['middle_name'] ?>">
           </div>
           <div class="input-field">
             Sex:
-            <input type="text" name="sex">
+            <input type="text" name="sex" value="<?= $row['sex'] ?>">
           </div>
           <div class="input-field">
             Birth date:
-            <input type="date" class="datepicker" name="birth">
+            <input type="date" class="datepicker" name="birth" value="<?= $row['birth'] ?>">
           </div>
           <div class="input-field">
             Age:
             <p class="range-field">
-              <input type="range" name="age" min="0" max="100">
+              <input type="range" name="age" min="0" max="100" value="<?= $row['age'] ?>">
             </p>
           </div>
           <div class="input-field">
             Favorite color:
-            <input type="text" name="favorite_color">
+            <input type="text" name="favorite_color" value="<?= $row['favorite_color'] ?>">
           </div>
           <div class="card-action">
             <button class="waves-effect btn teal accent-2" type="submit" name="submit">
-              <span class="pink-text">Add child</span>
+              <span class="pink-text">Submit changes</span>
             </button>
           </div>
         </form>
       </div>
     </div>
   </div>
-<?php else ?>
+<?php else: ?>
   <h3>No children to show</h3>
 <?php endif ?>
 
