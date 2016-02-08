@@ -4,12 +4,12 @@
 
   $id = $_GET['id'];
   $sql = "SELECT * FROM kids WHERE id = '$id'";
-  $result = mysqli_query($mysqli_connection, $sql);
+  $result = mysqli_query($mysql_connection, $sql);
   $row = mysqli_fetch_array($result);
 
 ?>
 
-<h1>Edit a child</h1>
+<h1><?= $row['first_name'] ?></h1>
 
 <?php if ($row = mysqli_fetch_array($result)): ?>
 
@@ -58,7 +58,7 @@
     </div>
   </div>
 </div>
-<?php else ?>
+<?php else: ?>
   <h3>No children to show</h3>
 <?php endif ?>
 
