@@ -1,4 +1,4 @@
-<?php include('../includes/header.php'); ?>
+<?php require_once('../includes/header.php'); ?>
 
 <?php 
   if (isset($_POST['submit'])) {
@@ -10,10 +10,6 @@
     $age            = $_POST['age'];
     $favorite_color = $_POST['favorite_color'];
 
-
-    // connect to the database
-    $mysql_connection = mysqli_connect('mysql.cs.dixie.edu', 'sking', 'P@$$word', 'sking');
-    
     $sql = "INSERT INTO kids (first_name, middle_name, sex, birth, age, favorite_color) VALUES (
     '$first_name', 
     '$middle_name', 
@@ -62,6 +58,12 @@
           <?= $favorite_color ?>
         </p>
         <div class="card-action">
+          <a class="waves-effect btn green accent-1" href="edit.php">Edit child's info</a>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect btn red accent-1" href="destroy.php">Delete child</a>
+        </div>
+        <div class="card-action">
           <a class="waves-effect btn blue accent-1" href="index.php">Back to home page</a>
         </div>
       </div>
@@ -69,4 +71,4 @@
   </div>
 </div>
 
-<?php include('../includes/footer.php'); ?>
+<?php require_once('../includes/footer.php'); ?>

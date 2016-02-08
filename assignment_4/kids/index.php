@@ -1,12 +1,30 @@
-<?php include('../includes/header.php'); ?>
+<?php require_once('../includes/header.php'); ?>
 
 <?php
-  $mysql_connection = mysqli_connect('mysql.cs.dixie.edu', 'sking', 'P@$$word', 'sking');
   $sql = "SELECT * FROM kids";
+  if (isset($_GET['order'])) {
+    $order = $_GET['order'];
+    if ($order == 'age_asc') {
+      $sql = "SELECT * FROM kids ORDER BY age DESC";
+    }
+  }
+
+  if (isset($_GET['filter'])) {
+    $filter = $_GET['filter'];
+    if ($filter == 'female') {
+      $sql .= "WHERE sex = 'F'";
+    }
+  }
+
   $result = mysqli_query($mysql_connection, $sql);
 ?>
 
 <h1>Lots of kids</h1>
+
+<p>
+  <a href="index.php?order=age_asc">Order by age</a>
+  <a href="index.php?filter=female">Show only girls</a>
+</p>
 <table class="striped">
   <thead>
     <tr>
@@ -21,7 +39,7 @@
   <tbody>
     <?php while($row = mysqli_fetch_array($result)): ?>
     <tr>
-      <td><?= $row['first_name'] ?></td>
+      <td><a href="show.php?id=<?= $row['id'] ?>"><?= $row['first_name'] ?></a></td>
       <td><?= $row['middle_name'] ?></td>
       <td><?= $row['sex'] ?></td>
       <td><?= $row['birth'] ?></td>
@@ -32,4 +50,4 @@
   </tbody>
 </table>
 
-<?php include('../includes/footer.php'); ?>
+<?php require_once('../includes/footer.php'); ?>
