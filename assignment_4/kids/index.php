@@ -12,7 +12,7 @@
   if (isset($_GET['filter'])) {
     $filter = $_GET['filter'];
     if ($filter == 'female') {
-      $sql .= "WHERE sex = 'F'";
+      $sql .= " WHERE sex = 'F'";
     }
   }
 

@@ -42,6 +42,9 @@
             Favorite color:
             <input type="text" name="favorite_color" value="<?= $row['favorite_color'] ?>">
           </div>
+          <div class="input-field">
+            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+          </div>
           <div class="card-action">
             <button class="waves-effect btn teal accent-2" type="submit" name="submit">
               <span class="pink-text">Submit changes</span>
