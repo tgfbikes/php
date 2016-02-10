@@ -4,8 +4,10 @@
   $sql = "SELECT * FROM kids";
   if (isset($_GET['order'])) {
     $order = $_GET['order'];
-    if ($order == 'age_asc') {
+    if ($order == 'age_dsc') {
       $sql = "SELECT * FROM kids ORDER BY age DESC";
+    } else if ($order == 'age_asc') {
+      $sql = "SELECT * FROM kids ORDER BY age ASC";
     }
   }
 
@@ -22,7 +24,8 @@
 <h1>Lots of kids</h1>
 
 <p>
-  <a class="waves-effect waves-light cyan accent-2 btn" href="index.php?order=age_asc">Order by age</a>
+  <a class="waves-effect waves-light cyan accent-2 btn" href="index.php?order=age_asc">Order by age acending</a>
+  <a class="waves-effect waves-light cyan accent-2 btn" href="index.php?order=age_dsc">Order by age decending</a>
   <a class="waves-effect waves-light cyan accent-2 btn" href="index.php?filter=female">Show only girls</a>
 </p>
 <table class="striped">
