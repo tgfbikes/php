@@ -22,8 +22,8 @@
 <h1>Lots of kids</h1>
 
 <p>
-  <a href="index.php?order=age_asc">Order by age</a>
-  <a href="index.php?filter=female">Show only girls</a>
+  <a class="waves-effect waves-light cyan accent-2 btn" href="index.php?order=age_asc">Order by age</a>
+  <a class="waves-effect waves-light cyan accent-2 btn" href="index.php?filter=female">Show only girls</a>
 </p>
 <table class="striped">
   <thead>
