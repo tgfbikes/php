@@ -32,7 +32,7 @@
 <div class="row">
   <div class="card col s6 push-s3">
     <div class="card-content">
-      <span class="card-title">You added <?= $first_name ?></span>
+      <span class="card-title">You edited <?= $first_name ?></span>
       <div class="card-content">
         <p>
           <strong>First Name:</strong>
