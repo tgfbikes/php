@@ -7,12 +7,14 @@
     $last_name      = $_POST['last_name'];
     $email          = $_POST['email'];
     $password       = $_POST['password'];
-
+    
+    $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+    
     $sql = "INSERT INTO users (first_name, last_name, email, encrypted_password) VALUES (
     '$first_name', 
     '$last_name', 
     '$email', 
-    '$password'
+    '$encrypted_password'
     )";
     
     mysqli_query($mysql_connection, $sql);
