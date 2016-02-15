@@ -44,7 +44,7 @@
           <?= $email ?>
         </p>
         <div class="card-action">
-          <a class="waves-effect btn blue accent-1" href="index.php">Back to home page</a>
+          <a class="waves-effect btn blue accent-1" href="../kids/index.php">Back to home page</a>
         </div>
       </div>
     </div>
