@@ -16,10 +16,10 @@
       <div class="row">
         <div class="col s12">
           <a href="#" class="brand-logo center">I got kids</a>
-          <?php if (isset($_SESSION)): ?>
+          <?php if (isset($_SESSION['first_name'])): ?>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="./index.php">Home</a></li>
-              <li><a href="./new.php">New</a></li>
+              <li><a href="../kids/index.php">Home</a></li>
+              <li><a href="../kids/new.php">New</a></li>
             </ul>
             <ul class="right">
               <li><i class="material-icons">perm_identity</i></li>
