@@ -11,14 +11,6 @@
         <span class="card-title">Sign in right now</span>
         <form method="get" action="../kids/index.php">
           <div class="input-field">
-            First name:
-            <input type="text" name="first_name">
-          </div>
-          <div class="input-field">
-            Last name:
-            <input type="text" name="last_name">
-          </div>
-          <div class="input-field">
             Email:
             <input type="email" name="email">
           </div>

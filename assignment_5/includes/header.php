@@ -16,14 +16,18 @@
       <div class="row">
         <div class="col s12">
           <a href="#" class="brand-logo center">I got kids</a>
-          <?php if (isset($_SESSION['first_name'])): ?>
+          <?php if (isset($_SESSION['user_id'])): ?>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
               <li><a href="../kids/index.php">Home</a></li>
               <li><a href="../kids/new.php">New</a></li>
             </ul>
             <ul class="right">
               <li><i class="material-icons">perm_identity</i></li>
-              <li><a href="#">Log out</a></li>
+              <li>
+                <form action="../user/logout.php">
+                  <input class="waves-effect waves-light btn" type="submit" value="Log out">
+                </form>
+              </li>
             </ul>
           <?php else: ?>
             <ul class="left hide-on-med-and-down">

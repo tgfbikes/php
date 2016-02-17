@@ -19,6 +19,15 @@
     
     mysqli_query($mysql_connection, $sql);
     
+    $userSql = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($mysql_connection, $userSql);
+    $row = mysqli_fetch_array($result);
+    if ($row) {
+        $_SESSION['user_id'] = $row['id'];
+    } else {
+      header('Location: ../user/login.php');
+    }
+    
   } else {
     // redirect if not POST
     header('Location: new.php');
@@ -31,6 +40,7 @@
     <div class="card-content">
       <span class="card-title"><?= $first_name ?> signed up</span>
       <div class="card-content">
+        <?= $_SESSION['user_id']; ?>
         <p>
           <strong>First Name:</strong>
           <?= $first_name ?>
