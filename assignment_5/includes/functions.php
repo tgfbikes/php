@@ -3,15 +3,18 @@
   function getCurrentUser() {
     global $mysqlconnection;
     
-    $email = $_POST['email'];
-    
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($mysql_connection, $sql);
-    $row = mysqli_fetch_array($result);
-    if ($row) {
-        $_SESSION['user_id'] = $row['id'];
+    if (isset($_SESSION['user_id'])) {
+      $id = $_SESSION['user_id'];
+      $sql = "SELECT * FROM users WHERE id = '$id'";
+      $result = mysqli_query($mysql_connection, $sql);
+      if ($row = mysqli_fetch_array($result)) {
+        return $row;
+      } else {
+        unset($_SESSION['user_id']);
+        return null;
+      }
     } else {
-      header('Location: ../user/login.php');
+      return null;
     }
   }
                            
