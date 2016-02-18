@@ -26,7 +26,7 @@
               <li><i class="material-icons">perm_identity</i></li>
               <li><?= $row['email']; ?>&nbsp;</li>
               <li>
-                <form action="../user/logout.php" method="POST">
+                <form action="../session/destroy.php" method="POST">
                   <button class="waves-effect waves-light btn" type="submit">Log out</button>
                 </form>
               </li>
@@ -34,7 +34,7 @@
           <?php else: ?>
             <ul class="left hide-on-med-and-down">
               <li><a href="../user/new.php">Sign Up</a></li>
-              <li><a href="../user/login.php">Sign In</a></li>
+              <li><a href="../session/new.php">Sign In</a></li>
             </ul>
           <?php endif ?>
         </div>

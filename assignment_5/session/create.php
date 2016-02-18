@@ -20,7 +20,7 @@
 ?>
 
   <h2>Something is jacked...</h2>
-  <p>Either your email or password is incorrect. Please check both and <a href="../user/login.php">login again</a></p>
+  <p>Either your email or password is incorrect. Please check both and <a href="new.php">login again</a></p>
   <p>Or if you don't have an accout you can <a href="../user/create.php">sign up</a></p>
 
 <?php include '../includes/footer.php' ?>
