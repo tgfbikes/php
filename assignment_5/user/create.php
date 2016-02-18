@@ -40,7 +40,6 @@
     <div class="card-content">
       <span class="card-title"><?= $first_name ?> signed up</span>
       <div class="card-content">
-        <?= $_SESSION['user_id']; ?>
         <p>
           <strong>First Name:</strong>
           <?= $first_name ?>
