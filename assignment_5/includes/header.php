@@ -24,7 +24,7 @@
             </ul>
             <ul class="right">
               <li><i class="material-icons">perm_identity</i></li>
-              <li><?= $row['email']; ?>&nbsp;</li>
+              <li><?= $row['email']; ?>&nbsp;&nbsp;</li>
               <li>
                 <form action="../session/destroy.php" method="POST">
                   <button class="waves-effect waves-light btn" type="submit">Log out</button>
