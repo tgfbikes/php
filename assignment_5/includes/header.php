@@ -24,8 +24,8 @@
             <ul class="right">
               <li><i class="material-icons">perm_identity</i></li>
               <li>
-                <form action="../user/logout.php">
-                  <input class="waves-effect waves-light btn" type="submit" value="Log out">
+                <form action="../user/logout.php" method="POST">
+                  <button class="waves-effect waves-light btn" type="submit">Log out</button>
                 </form>
               </li>
             </ul>
