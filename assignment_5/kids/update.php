@@ -1,4 +1,9 @@
 <?php require_once('../includes/header.php'); ?>
+<?php 
+  if (!$_SESSION['user_id']) {
+    header('Location: ../user/login.php');
+  }
+?>
 
 <?php 
   if (isset($_POST['submit'])) {

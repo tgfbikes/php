@@ -23,6 +23,7 @@
             </ul>
             <ul class="right">
               <li><i class="material-icons">perm_identity</i></li>
+              <li><?= $_SESSION['email']; ?>&nbsp;</li>
               <li>
                 <form action="../user/logout.php" method="POST">
                   <button class="waves-effect waves-light btn" type="submit">Log out</button>
@@ -32,7 +33,7 @@
           <?php else: ?>
             <ul class="left hide-on-med-and-down">
               <li><a href="../user/new.php">Sign Up</a></li>
-              <li><a href="../user/new.php">Sign In</a></li>
+              <li><a href="../user/login.php">Sign In</a></li>
             </ul>
           <?php endif ?>
         </div>

@@ -1,5 +1,11 @@
 <?php require_once('../includes/header.php'); ?>
 
+<?php 
+  if (!$_SESSION['user_id']) {
+    header('Location: ../user/login.php');
+  }
+?>
+
 <?php
   $sql = "SELECT * FROM kids";
   if (isset($_GET['order'])) {

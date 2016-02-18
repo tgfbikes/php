@@ -9,7 +9,7 @@
     <div class="card col s6 push-s3">
       <div class="card-content">
         <span class="card-title">Sign in right now</span>
-        <form method="get" action="../kids/index.php">
+        <form method="POST" action="../session/create.php">
           <div class="input-field">
             Email:
             <input type="email" name="email">

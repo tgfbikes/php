@@ -1,4 +1,9 @@
 <?php include '../includes/header.php' ?>
+<?php 
+  if (!$_SESSION['user_id']) {
+    header('Location: ../user/login.php');
+  }
+?>
 
   <div class="row">
     <div class="col s6 push-s3">
