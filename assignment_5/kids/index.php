@@ -1,7 +1,7 @@
 <?php require_once('../includes/header.php'); ?>
 
 <?php 
-  if (!getCurrentUser) {
+  if (!getCurrentUser()) {
     header('Location: ../user/login.php');
   }
 ?>

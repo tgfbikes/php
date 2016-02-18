@@ -13,7 +13,6 @@
     if ($row = mysqli_fetch_array($result)) {
       if (password_verify($password, $row['encrypted_password'])) {
         $_SESSION['user_id'] = $row['id'];
-        $_SESSION['email'] = $row['email'];
         header('Location: ../kids/index.php');
       }
     }

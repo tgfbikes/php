@@ -1,6 +1,6 @@
 <?php require_once('../includes/header.php'); ?>
 <?php 
-  if (!$_SESSION['user_id']) {
+  if (!getCurrentUser()) {
     header('Location: ../user/login.php');
   }
 ?>

@@ -1,7 +1,7 @@
 <?php
 
   function getCurrentUser() {
-    global $mysqlconnection;
+    global $mysql_connection;
     
     if (isset($_SESSION['user_id'])) {
       $id = $_SESSION['user_id'];
