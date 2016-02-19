@@ -3,10 +3,28 @@
 <?php 
   if (isset($_POST['submit'])) {
     // get values from $_POST
-    $first_name     = $_POST['first_name'];
-    $last_name      = $_POST['last_name'];
-    $email          = $_POST['email'];
-    $password       = $_POST['password'];
+    $first_name       = $_POST['first_name'];
+    $last_name        = $_POST['last_name'];
+    $email            = $_POST['email'];
+    $password         = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    
+    $errors = [];
+    
+    if (empty($email)) {
+      $errors[] = "Please enter your email";
+    }
+    if (empty($password)) {
+      $errors[] = "Please enter a password";
+    }
+    if (empty($confirm_password)) {
+      $errors[] = "Please confirm your password";
+    }
+    if ($password != $confirm_password) {
+      $errors[] = "Password and confirmation do not match";
+      $password = '';
+      $confirm_password = '';
+    }
     
     $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
     

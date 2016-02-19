@@ -17,5 +17,13 @@
       return null;
     }
   }
+
+  function strIfSet(&$str) {
+    if (isset($str)) {
+      return $str;
+    } else {
+      return '';
+    }
+  }
                            
 ?>
