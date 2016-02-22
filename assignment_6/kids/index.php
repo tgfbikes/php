@@ -2,7 +2,7 @@
 
 <?php 
   if (!getCurrentUser()) {
-    header('Location: ../user/login.php');
+    header('Location: ../user/new.php');
   }
 ?>
 

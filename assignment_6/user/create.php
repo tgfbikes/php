@@ -26,32 +26,35 @@
       $confirm_password = '';
     }
     
-    $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
-    
-    $sql = "INSERT INTO users (first_name, last_name, email, encrypted_password) VALUES (
-    '$first_name', 
-    '$last_name', 
-    '$email', 
-    '$encrypted_password'
-    )";
-    
-    mysqli_query($mysql_connection, $sql);
-    $mysql_error = mysqli_error($mysql_connection);
-    
-    $userSql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($mysql_connection, $userSql);
-    $row = mysqli_fetch_array($result);
-    if ($row) {
-        $_SESSION['user_id'] = $row['id'];
-    } else {
-      header('Location: ../user/login.php');
+    if (empty($errors)) {
+      print_r($errors);
+      $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+
+      // insert into the table
+      $sql = "INSERT INTO users (first_name, last_name, email, encrypted_password) VALUES (
+      '$first_name', 
+      '$last_name', 
+      '$email', 
+      '$encrypted_password'
+      )";
+
+      mysqli_query($mysql_connection, $sql);
+      $mysql_error = mysqli_error($mysql_connection);
+
+      $userSql = "SELECT * FROM users WHERE email = '$email'";
+      $result = mysqli_query($mysql_connection, $userSql);
+      $row = mysqli_fetch_array($result);
+      if ($row) {
+          $_SESSION['user_id'] = $row['id'];
+      } else {
+        header('Location: ../user/new.php');
+      }
     }
     
   } else {
     // redirect if not POST
     header('Location: new.php');
   }
-    // insert into the table
 ?>
 
 <div class="row">

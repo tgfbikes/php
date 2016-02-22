@@ -3,6 +3,14 @@
   <div class="row">
     <div class="col s6 push-s3">
       <h1>User Sign Up</h1>
+      <?php if (isset($errors)): ?>
+        <p>The following errors occurred:</p>
+        <ul>
+        <?php foreach ($errors as $field => $error): ?>
+         <li><?= $error ?></li>
+        <?php endforeach ?>
+        </ul>
+      <?php endif ?>
     </div>
   </div>
   <div class="row">
