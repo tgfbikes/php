@@ -3,25 +3,25 @@
 <?php 
   if (isset($_POST['submit'])) {
     // get values from $_POST
-    $first_name       = $_POST['first_name'];
-    $last_name        = $_POST['last_name'];
-    $email            = $_POST['email'];
+    $first_name       = mysqli_real_escape_string($mysql_connection, $_POST['first_name']);
+    $last_name        = mysqli_real_escape_string($mysql_connection, $_POST['last_name']);
+    $email            = mysqli_real_escape_string($mysql_connection, $_POST['email']);
     $password         = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
     
     $errors = [];
     
     if (empty($email)) {
-      $errors[] = "Please enter your email";
+      $errors['email'] = "Please enter your email";
     }
     if (empty($password)) {
-      $errors[] = "Please enter a password";
+      $errors['password'] = "Please enter a password";
     }
     if (empty($confirm_password)) {
-      $errors[] = "Please confirm your password";
+      $errors['confirm_password'] = "Please confirm your password";
     }
     if ($password != $confirm_password) {
-      $errors[] = "Password and confirmation do not match";
+      $errors['confirm_password'] = "Password and confirmation do not match";
       $password = '';
       $confirm_password = '';
     }
@@ -36,6 +36,7 @@
     )";
     
     mysqli_query($mysql_connection, $sql);
+    $mysql_error = mysqli_error($mysql_connection);
     
     $userSql = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($mysql_connection, $userSql);

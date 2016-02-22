@@ -25,5 +25,13 @@
       return '';
     }
   }
+
+  function errorMessageForField($errors, $field) {
+    if (isset($errors)) {
+      if(isset($errors[$field])) {
+        return "<span class='error'>$error</span>"
+      }
+    }
+  }
                            
 ?>
