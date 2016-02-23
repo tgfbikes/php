@@ -1,4 +1,4 @@
-<?php include '../includes/header.php' ?>
+<?php require_once('../includes/header.php'); ?>
 
   <div class="row">
     <div class="col s6 push-s3">
@@ -48,4 +48,4 @@
     </div>
   </div>
 
-<?php include '../includes/footer.php' ?>
+<?php require_once('../includes/footer.php'); ?>
