@@ -13,10 +13,12 @@
           <div class="input-field">
             Email:
             <input type="email" name="email">
+            <div><?= errorMessageForField($errors, 'email'); ?></div>
           </div>
           <div class="input-field">
             Password:
             <input type="password" name="password">
+            <div><?= errorMessageForField($errors, 'password'); ?></div>
           </div>
           <div class="card-action">
             <button class="waves-effect btn teal accent-2" type="submit" name="submit">
