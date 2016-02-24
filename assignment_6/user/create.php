@@ -10,7 +10,13 @@
     $confirm_password = $_POST['confirm_password'];
 
     $errors = [];
-
+    
+    if (empty($first_name)) {
+      $errors['first_name'] = "Please enter your first name";
+    }
+    if (empty($last_name)) {
+      $errors['last_name'] = "Please enter your last name";
+    }
     if (empty($email)) {
       $errors['email'] = "Please enter your email";
     }
@@ -83,7 +89,6 @@
 
 <?php else: ?>
 
-  <!-- I couldn't get the line of code, require_once('new.php') to work so I included all of the code from new.php -->
   <?php
     require_once('new.php');
   ?>
