@@ -23,6 +23,9 @@
     if (empty($password)) {
       $errors['password'] = "Please enter a password";
     }
+    if (!passwordValidate($password)) {
+      $errors['password_validate'] = "Your password must have at least one capital letter, one number, and one special character";
+    }
     if (empty($confirm_password)) {
       $errors['confirm_password'] = "Please confirm your password";
     }

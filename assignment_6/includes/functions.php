@@ -36,8 +36,8 @@
     }
   }
 
-  function checkPassword($str) {
-    $pattern = '^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$';
+  function passwordValidate($str) {
+    $pattern = '/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/';
     if (preg_match($pattern, $str)) {
       return true;
     } else {

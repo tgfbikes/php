@@ -29,6 +29,7 @@
             Password:
             <input type="password" name="password">
             <div><?= errorMessageForField($errors, 'password'); ?></div>
+            <div><?= errorMessageForField($errors, 'password_validate'); ?></div>
           </div>
           <div class="input-field">
             Confirm Password:
