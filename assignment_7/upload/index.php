@@ -7,8 +7,7 @@
 
 ?>
 
-  <h1>Uploaded Photos</h1>
-  <?php if ($result): ?>
+  <h3>Uploaded Photos</h3>
   <table class="striped">
     <thead>
       <tr>
@@ -22,7 +21,7 @@
     <tbody>
       <?php while($row = mysqli_fetch_array($result)): ?>
       <tr>
-        <td><?= $row['title'] ?></td>
+        <td><a href="../files/photos/<?= $row['id'] ?>/<?= $row['file_name'] ?>"><?= $row['title'] ?></a></td>
         <td><?= $row['file_name'] ?></td>
         <td><?= $row['file_size'] ?></td>
         <td><?= $row['file_type'] ?></td>
@@ -31,8 +30,5 @@
       <?php endwhile ?>
     </tbody>
   </table>
-  <?php else: ?>
-    <h4>There are no photos to show</h4>
-  <?php endif ?>
 
 <?php require_once('../includes/footer.php'); ?>
