@@ -8,6 +8,7 @@
 ?>
 
   <h1>Uploaded Photos</h1>
+  <?php if ($result): ?>
   <table class="striped">
     <thead>
       <tr>
@@ -30,5 +31,8 @@
       <?php endwhile ?>
     </tbody>
   </table>
+  <?php else: ?>
+    <h4>There are no photos to show</h4>
+  <?php endif ?>
 
 <?php require_once('../includes/footer.php'); ?>

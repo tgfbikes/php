@@ -36,13 +36,13 @@
     echo $new_file_path;
     echo $new_file_name;
     // make id directory
-    mkdir();
-//    // change permissions on that directory
-//    chmod($new_file_path, 0755);
-//    // move uploaded file into directory
-//    move_uploaded_file($file_tmp_name, $new_file_name);
-//    // change permissions of the file
-//    chmod($new_file_name, 0644);
+    mkdir($new_file_path);
+    // change permissions on that directory
+    chmod($new_file_path, 0755);
+    // move uploaded file into directory
+    move_uploaded_file($file_tmp_name, $new_file_name);
+    // change permissions of the file
+    chmod($new_file_name, 0644);
   } else {
     header('Location: new.php');
   }
