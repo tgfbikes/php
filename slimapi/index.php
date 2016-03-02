@@ -10,17 +10,17 @@
 
   // Register component on container
   $container['view'] = function ($container) {
-      return new \Slim\Views\PhpRenderer('templates');
+    return new \Slim\Views\PhpRenderer('templates/');
   };
 
   // Index action
   $app->get('/beards', function ($request, $response) {
-    return $response->write('index');
+    return $this->view->render($response, 'index.html.php');
   });
 
   // New action
   $app->get('/beards/new', function ($request, $response) {
-    return $response->write('new');
+    return $this->view->render($response, 'new.html.php');
   });
 
   // Show action
@@ -30,7 +30,7 @@
 
   // Create action
   $app->post('/beards', function ($request, $response) {
-    return $response->write('create');
+    return $this->view->render($response, 'create.html.php');
   });
 
   // Run app
