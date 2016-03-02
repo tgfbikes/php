@@ -8,6 +8,9 @@
   // Get container
   $container = $app->getContainer();
 
+  // Show errors
+  $container['settings']['displayErrorDetails'] = true;
+
   // Register component on container
   $container['view'] = function ($container) {
     return new \Slim\Views\PhpRenderer('templates/');
