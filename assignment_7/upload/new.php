@@ -20,7 +20,7 @@
         </div>
         <div class="card-action">
           <button class="waves-effect btn teal accent-2" type="submit" name="submit">
-            <span class="pink-text">Sign up</span>
+            <span class="pink-text">Upload Photo</span>
           </button>
         </div>
       </form>
