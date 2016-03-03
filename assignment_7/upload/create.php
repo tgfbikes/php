@@ -20,8 +20,8 @@
       $errors['title'] = "Cannot be blank";
     }
     
-    if ($file_size >= 2000000) {
-      $errors['file_size'] = "File size cannot exceed 2MB";
+    if ($file_size == 0) {
+      $errors['file_size'] = "Your file size is 0, either you need to select a file or your file is over 2MB; sucks for you, select another file";
     }
     
     $sql = "INSERT INTO photos (title, file_name, file_size, file_type, user_id, uploaded_at) 
@@ -38,6 +38,8 @@
       mysqli_query($mysql_connection, $sql);
 
       // check for errors
+      $mysql_error = mysqli_error($mysql_connection);
+      echo $mysql_error;
 
       // gets id of last insert for current connection
       $id = mysqli_insert_id($mysql_connection);
