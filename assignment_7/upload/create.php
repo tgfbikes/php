@@ -14,6 +14,16 @@
       $user_id = 0;
     }
     
+    $errors = [];
+    
+    if (empty($title)) {
+      $errors['title'] = "Cannot be blank";
+    }
+    
+    if ($file_size >= 2000000) {
+      $errors['file_size'] = "File size cannot exceed 2MB";
+    }
+    
     $sql = "INSERT INTO photos (title, file_name, file_size, file_type, user_id, uploaded_at) 
       VALUES (
         '$title', 
