@@ -34,28 +34,60 @@
         NOW()
       )";
     
-    mysqli_query($mysql_connection, $sql);
+    if (empty($errors)) {
+      mysqli_query($mysql_connection, $sql);
+
+      // check for errors
+
+      // gets id of last insert for current connection
+      $id = mysqli_insert_id($mysql_connection);
+      $new_file_path = "../files/photos/$id";
+      $new_file_name = "$new_file_path/$file_name";
+
+      // make id directory
+      mkdir($new_file_path);
+      // change permissions on that directory
+      chmod($new_file_path, 0755);
+      // move uploaded file into directory
+      move_uploaded_file($file_tmp_name, $new_file_name);
+      // change permissions of the file
+      chmod($new_file_name, 0644);
+    } 
     
-    // check for errors
-
-    // gets id of last insert for current connection
-    $id = mysqli_insert_id($mysql_connection);
-    $new_file_path = "../files/photos/$id";
-    $new_file_name = "$new_file_path/$file_name";
-
-    echo $new_file_path;
-    echo $new_file_name;
-    // make id directory
-    mkdir($new_file_path);
-    // change permissions on that directory
-    chmod($new_file_path, 0755);
-    // move uploaded file into directory
-    move_uploaded_file($file_tmp_name, $new_file_name);
-    // change permissions of the file
-    chmod($new_file_name, 0644);
   } else {
     header('Location: new.php');
   }
 ?>
+
+<?php if (empty($errors)): ?>
+
+  <div class="row">
+    <div class="card col s6 push-s3">
+      <div class="card-content">
+        <span class="card-title"><?= $title ?> uploaded</span>
+        <div class="card-content">
+          <p>
+            <strong>File Name:</strong>
+            <?= $file_name ?>
+          </p>
+          <p>
+            <strong>File Size:</strong>
+            <?= $file_size?>
+          </p>
+          <div class="card-action">
+            <a class="waves-effect btn black accent-1" href="index.php">Back to all photos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php else: ?>
+
+  <?php
+      require_once('new.php');
+  ?>
+  
+<?php endif ?>
 
 <?php require_once('../includes/footer.php'); ?>
