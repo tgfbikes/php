@@ -13,10 +13,12 @@
         <div class="input-field">
           Title:
           <input type="text" name="title" value="">
+          <div><?= errorMessageForField($errors, 'title'); ?></div>
         </div>
         <div class="input-field">
           File:
           <input type="file" name="file">
+          <div><?= errorMessageForField($errors, 'file_size'); ?></div>
         </div>
         <div class="card-action">
           <button class="waves-effect btn teal accent-2" type="submit" name="submit">
