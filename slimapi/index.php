@@ -1,6 +1,7 @@
 <?php
 
   require('vendor/autoload.php');
+  require('includes/Beard.php');
   
   // Create and configure Slim app
   $app = new \Slim\App;
@@ -18,7 +19,11 @@
 
   // Index action
   $app->get('/beards', function ($request, $response) {
-    return $this->view->render($response, 'index.html.php');
+//    $beardDB = new Beard();
+//    $beards = $beardDB->getBeards();
+    return $this->view->render($response, 'index.html.php', [
+      'beards' => $beards
+    ]);
   });
 
   // New action
@@ -27,13 +32,21 @@
   });
 
   // Show action
-  $app->get('/beards/{id}', function ($request, $response) {
-    return $response->write('show');
+  $app->get('/beards/{id}', function ($request, $response, $args) {
+    $id = $args['id'];
+    $beardDB = new Beard();
+    $beard = $beardDB->getBeard($id);
+    return $this->render($response, 'show.html.php', [
+      'beard' => $beard
+    ]);
   });
 
   // Create action
   $app->post('/beards', function ($request, $response) {
-    return $this->view->render($response, 'create.html.php');
+    $body = $request->getParsedBody(); // $_POST associative array
+    $beardDb = new Beard();
+    $beardDb->createBeard($body);
+    return $response->withStatus(301)->withHeader('Location', '/slimapi/index.php/beards');
   });
 
   // Run app
