@@ -16,8 +16,8 @@
         <div class="col s12">
           <a href="#" class="brand-logo center">Beards of Plenty</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="./beards">Home</a></li>
-              <li><a href="./beards/new">Upload a new beard</a></li>
+              <li><a href="/slimapi/index.php/beards">Home</a></li>
+              <li><a href="/slimapi/index.php/beards/new">Upload a new beard</a></li>
             </ul>
         </div>
       </div>
