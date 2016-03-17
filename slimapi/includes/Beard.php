@@ -6,7 +6,7 @@ class Beard {
   
   function __construct() {
     // connect to database
-    $this->$connection = new PDO('mysql:host=mysql.cs.dixie.edu;dbname=sking', 'sking', 'P@$$word');
+    $this->connection = new PDO('mysql:host=mysql.cs.dixie.edu;dbname=sking', 'sking', 'P@$$word');
   }
   
   function getBeards() {
