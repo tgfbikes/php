@@ -9,14 +9,14 @@
   <div class="card col s6 push-s3">
     <div class="card-content">
       <span class="card-title">Right here and now</span>
-      <form action="/slimapi/beards" method="POST" enctype="multipart/form-data">
+      <form action="/slimapi/index.php/beards" method="POST" enctype="multipart/form-data">
         <div class="input-field">
           Name:
           <input type="text" name="name">
         </div>
         <div class="input-field">
           Type:
-          <input type="text" name="type">
+          <input type="text" name="beard_type">
         </div>
         <div class="input-field">
           Awesomeness:
