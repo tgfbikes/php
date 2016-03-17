@@ -20,7 +20,7 @@
               </tr>
             <?php foreach ($beards as $beard): ?>
               <tr>
-                <td><a href="/slimapi/index.php/show.html.php/<?= $beard['id'] ?>"><?= $beard['name'] ?></a></td>
+                <td><a href="/slimapi/index.php/beards/<?= $beard['id'] ?>"><?= $beard['name'] ?></a></td>
                 <td><?= $beard['beard_type'] ?></td>
                 <td><?= $beard['awesomeness'] ?></td>
                 <td><?= $beard['age'] ?></td>
