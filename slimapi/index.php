@@ -60,7 +60,7 @@
     $id = $args['id'];
     $beardDB = new Beard();
     $beard = $beardDB->getBeard($id);
-    return $this->render($response, 'show.html.php', [
+    return $this->view->render($response, 'show.html.php', [
       'beard' => $beard
     ]);
   });
