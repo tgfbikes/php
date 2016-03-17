@@ -30,7 +30,7 @@
         </table>
       <?php else: ?>
         <h3>Uh oh...there are no beards to show!</h3>
-        <p>Quick! <a href="new.html.php">Go add a beard</a> and stop this crime against humanity...</p>
+        <p>Quick! <a href="/slimapi/index.php/new.html.php">Go add a beard</a> and stop this crime against humanity...</p>
       <?php endif ?>
       
       
