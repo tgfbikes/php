@@ -6,7 +6,7 @@ class Beard {
   
   function __construct() {
     // connect to database
-    $this->connection = new PDO('mysql:host=mysql.cs.dixie.edu;dbname=sking', 'sking', 'P@$$word1!');
+    $this->$connection = new PDO('mysql:host=mysql.cs.dixie.edu;dbname=sking', 'sking', 'P@$$word');
   }
   
   function getBeards() {
@@ -25,8 +25,11 @@ class Beard {
     $statement->bindParam('beard_type',  $beard['beard_type']);
     $statement->bindParam('awesomeness', $beard['awesomeness']);
     $statement->bindParam('age',         $beard['age']);
-    
-    return $statement->execute();
+    if ($statement->execute()) {
+      return $this->getBeard($this->connection->lastInsertId);
+    } else {
+      return false;
+    }
   }
   
   function getBeard($beard_id) {
