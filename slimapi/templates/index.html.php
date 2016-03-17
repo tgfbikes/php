@@ -18,14 +18,14 @@
                 <td>Awesomeness</td>
                 <td>Age</td>
               </tr>
-            <?php while ($beards): ?>
+            <?php foreach ($beards as $beard): ?>
               <tr>
-                <td><?= $beards['name'] ?></td>
-                <td><?= $beards['beard_type'] ?></td>
-                <td><?= $beards['awesomeness'] ?></td>
-                <td><?= $beards['age'] ?></td>
+                <td><a href="/slimapi/index.php/show.html.php/<?= $beard['id'] ?>"><?= $beard['name'] ?></a></td>
+                <td><?= $beard['beard_type'] ?></td>
+                <td><?= $beard['awesomeness'] ?></td>
+                <td><?= $beard['age'] ?></td>
               </tr>
-            <?php endwhile ?>
+            <?php endforeach ?>
           </tbody>
         </table>
       <?php else: ?>
