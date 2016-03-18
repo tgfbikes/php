@@ -47,6 +47,11 @@
     return $this->view->render($response, 'new.html.php');
   });
 
+  // Edit action
+  $app->get('/beards/edit/{id}', function ($request, $response) {
+    return $this->view->render($response, 'edit.html.php');
+  });
+
   // Show action .json
   $app->get('/beards/{id}.json', function ($request, $response, $args) {
     $id = $args['id'];
