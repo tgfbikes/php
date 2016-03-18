@@ -32,25 +32,6 @@
         <h3>Uh oh...there are no beards to show!</h3>
         <p>Quick! <a href="/slimapi/index.php/new.html.php">Go add a beard</a> and stop this crime against humanity...</p>
       <?php endif ?>
-      
-      
-<!--
-      <form action="create.php" method="POST" enctype="multipart/form-data">
-        <div class="input-field">
-          Title:
-          <input type="text" name="title" value="">
-        </div>
-        <div class="input-field">
-          File:
-          <input type="file" name="file">
-        </div>
-        <div class="card-action">
-          <button class="waves-effect btn teal accent-2" type="submit" name="submit">
-            <span class="pink-text">Upload Photo</span>
-          </button>
-        </div>
-      </form>
--->
     </div>
   </div>
 </div>
