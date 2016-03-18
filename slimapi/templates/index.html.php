@@ -24,6 +24,16 @@
                 <td><?= $beard['beard_type'] ?></td>
                 <td><?= $beard['awesomeness'] ?></td>
                 <td><?= $beard['age'] ?></td>
+                <td>
+                  <a class="btn-floating btn-large green" href="/slimapi/index.php/beards/edit/<?= $beard['id'] ?>">
+                    <i class="large material-icons">mode_edit</i>
+                  </a>
+                </td>
+                <td>
+                  <form action="/slimapi/index.php/beards/<?= $beard['id'] ?>" method="DELETE">
+                    <input type="submit" name="submit" value="Delete">
+                  </form>
+                </td>
               </tr>
             <?php endforeach ?>
           </tbody>
