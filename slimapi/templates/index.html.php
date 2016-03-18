@@ -25,13 +25,15 @@
                 <td><?= $beard['awesomeness'] ?></td>
                 <td><?= $beard['age'] ?></td>
                 <td>
-                  <a class="btn-floating btn-large green" href="/slimapi/index.php/beards/edit/<?= $beard['id'] ?>">
-                    <i class="large material-icons">mode_edit</i>
+                  <a class="btn-floating btn-medium green" href="/slimapi/index.php/beards/edit/<?= $beard['id'] ?>">
+                    <i class="medium material-icons">mode_edit</i>
                   </a>
                 </td>
                 <td>
                   <form action="/slimapi/index.php/beards/<?= $beard['id'] ?>" method="DELETE">
-                    <input type="submit" name="submit" value="Delete">
+                    <button class="btn-floating btn-medium red" type="submit" name="submit">
+                      <i class="medium material-icons">delete</i>
+                    </button>
                   </form>
                 </td>
               </tr>
