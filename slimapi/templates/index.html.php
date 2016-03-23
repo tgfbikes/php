@@ -30,7 +30,8 @@
                   </a>
                 </td>
                 <td>
-                  <form action="/slimapi/index.php/beards/<?= $beard['id'] ?>" method="DELETE">
+                  <form action="/slimapi/index.php/beards/<?= $beard['id'] ?>" method="POST">
+                    <input type="hidden" name="_METHOD" value="DELETE"/>
                     <button class="btn-floating btn-medium red" type="submit" name="submit">
                       <i class="medium material-icons">delete</i>
                     </button>

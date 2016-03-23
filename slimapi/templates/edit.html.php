@@ -9,7 +9,7 @@
   <div class="card col s6 push-s3">
     <div class="card-content">
       <span class="card-title">Don't screw this up</span>
-      <form action="/slimapi/index.php/beards" method="POST" enctype="multipart/form-data">
+      <form action="/slimapi/index.php/beards/<?= $beard['id'] ?>" method="POST" enctype="multipart/form-data">
         <div class="input-field">
           Name:
           <input type="text" name="name" value="<?= $beard['name'] ?>">
@@ -26,6 +26,7 @@
           Age (months):
           <input type="number" name="age" value="<?= $beard['age'] ?>">
         </div>
+        <input type="hidden" name="_METHOD" value="PUT"/>
         <div class="card-action">
           <button class="waves-effect btn teal accent-2" type="submit" name="submit">
             <span class="pink-text">Update Beard</span>
