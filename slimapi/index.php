@@ -48,8 +48,13 @@
   });
 
   // Edit action
-  $app->get('/beards/edit/{id}', function ($request, $response) {
-    return $this->view->render($response, 'edit.html.php');
+  $app->get('/beards/edit/{id}', function ($request, $response, $args) {
+    $id = $args['id'];
+    $beardDB = new Beard();
+    $beard = $beardDB->getBeard($id);
+    return $this->view->render($response, 'edit.html.php', [
+      'beard' => $beard
+    ]);
   });
 
   // Show action .json
@@ -70,11 +75,23 @@
     ]);
   });
 
+  // Update action
+  $app->put('/beards/{id}', function ($request, $response, $args) {
+    $id = $args['id'];
+    $beardDB = new Beard();
+    $beard = $beardDB->updateBeard($id);
+    if ($beard) {
+      return $response->withStatus(302)->withHeader('Location', '/slimapi/index.php/beards');
+    } else {
+      return $response->withStatus(500)->withHeader('Location', '/slimapi/index.php/beards');
+    }
+  });
+
   // Create action .json
   $app->post('/beards.json', function ($request, $response) {
     $body = $request->getParsedBody(); // $_POST associative array
     $beardDb = new Beard();
-    $beardDb->createBeard($body);
+    $beard = $beardDb->createBeard($body);
     return renderJSON($response, 201, $beard);
   });
 
@@ -84,6 +101,17 @@
     $beardDb = new Beard();
     $beardDb->createBeard($body);
     return $response->withStatus(302)->withHeader('Location', '/slimapi/index.php/beards');
+  });
+
+  $app->delete('/beards/{id}', function ($request, $response, $args) {
+    $id = $args['id'];
+    $beardDB = new Beard();
+    $beard = $beardDB->deleteBeard($id);
+    if ($beard) {
+      return $response->withStatus(302)->withHeader('Location', '/slimapi/index.php/beards');
+    } else {
+      return $response->withStatus(500)->withHeader('Location', '/slimapi/index.php/beards');
+    }
   });
 
   // Run app
