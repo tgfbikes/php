@@ -26,7 +26,7 @@ class Beard {
     $statement->bindParam('awesomeness', $beard['awesomeness']);
     $statement->bindParam('age',         $beard['age']);
     if ($statement->execute()) {
-      return $this->getBeard($this->connection->lastInsertId);
+      return $this->getBeard($this->connection->lastInsertId());
     } else {
       return false;
     }
@@ -38,6 +38,35 @@ class Beard {
     $statement->bindParam('beard_id', $beard_id);
     $statement->execute();
     return $statement->fetch(PDO::FETCH_ASSOC);
+  }
+  
+  function updateBeard($beard_id) {
+    $sql = 'UPDATE beards SET 
+              name = :name,
+              beard_type = :beard_type,
+              awesomeness = :awesomeness,
+              age = :age
+              WHERE id = :id';
+    $statement = $this->connection->prepare($sql);
+    $statement->bindParam('name',        $beard['name']);
+    $statement->bindParam('beard_type',  $beard['beard_type']);
+    $statement->bindParam('awesomeness', $beard['awesomeness']);
+    $statement->bindParam('age',         $beard['age']);
+    if ($statement->execute()) {
+      return $this->getBeard($this->connection->lastInsertId());
+    } else {
+      return false;
+    }
+  }
+  
+  function deleteBeard($beard_id) {
+    $sql = "DELETE FROM kids WHERE id = '$beard_id'";
+    $statement = $this->connection->prepare($sql);
+    if ($statement->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
   
 }
