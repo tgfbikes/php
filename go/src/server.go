@@ -1,5 +1,8 @@
 package main
 
+import "fmt"
+import "net/http"
+
 import "github.com/go-martini/martini"
 import "github.com/martini-contrib/render"
 
@@ -10,18 +13,19 @@ func main() {
   }))
 
   // Index route
-  m.Get("/", func(r render.Render) {
-    r.HTML(200, "index", "working")
+  m.Get("/", func(ren render.Render) {
+    ren.HTML(200, "index", "working")
   })
 
   // New route
-  m.Get("/new", func(r render.Render) {
-    r.HTML(200, "new", "working")
+  m.Get("/new", func(ren render.Render) {
+    ren.HTML(200, "new", "working")
   })
 
   // Create route
-  m.Post("/", func (r render.Render)  {
-    r.Redirect("/")
+  m.Post("/", func (req *http.Request, ren render.Render)  {
+    ren.Redirect("/")
+    fmt.Println("data: " + req.FormValue("name"))
   })
 
   m.Run()
