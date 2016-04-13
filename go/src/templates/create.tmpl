@@ -1,1 +1,29 @@
-{{ . }}
+<h3>Beard Saved!</h3>
+
+<div class="row">
+  <div class="card col s6 push-s3">
+    <div class="card-content">
+      <span class="card-title">{{ .Name }}'s Beard Info</span>
+      <div class="card-content">
+        <p>
+          <strong>Beard Type:</strong>
+          {{ .Type }}
+        </p>
+        <p>
+          <strong>Level of Awesomeness:</strong>
+          {{ .Awesomeness }}
+        </p>
+        <p>
+          <strong>Age (months):</strong>
+          {{ .Age }}
+        </p>
+        <div class="card-action">
+          <a class="waves-effect btn green accent-1" href="/edit/{{ .ID }}">Edit {{ .Name }}'s info</a>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect btn blue accent-1" href="/">Back to all beards</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
