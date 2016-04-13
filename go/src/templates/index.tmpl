@@ -9,7 +9,7 @@
   </tr>
   {{ range . }}
   <tr>
-    <td>{{ .Name }}</td>
+    <td><a href="/{{ .ID }}">{{ .Name }}</a></td>
     <td>{{ .Type }}</td>
     <td>{{ .Awesomeness }}</td>
     <td>{{ .Age }}</td>
