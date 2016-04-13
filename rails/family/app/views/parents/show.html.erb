@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @parent.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @parent.lname %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @parent.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @parent.age %>
+</p>
+
+<p>
+  <strong>Kids:</strong>
+  <ul>
+    <% @parent.kids.each do |kid| %>
+      <li><%= link_to kid.fname, kid %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_parent_path(@parent) %> |
+<%= link_to 'Back', parents_path %>

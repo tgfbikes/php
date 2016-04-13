@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resident.name %>
+</p>
+
+<p>
+  <strong>Recruitment tally:</strong>
+  <%= @resident.recruitment_tally %>
+</p>
+
+<p>
+  <strong>Date of undeath:</strong>
+  <%= @resident.date_of_undeath %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @resident.date %>
+</p>
+
+<p>
+  <strong>On diet:</strong>
+  <%= @resident.on_diet %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @resident.picture %>
+</p>
+
+<%= link_to 'Edit', edit_resident_path(@resident) %> |
+<%= link_to 'Back', residents_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @kid.picture, width: 300 if @kid.picture? %>
+</p>
+
+<p>
+  <strong>First Name:</strong>
+  <%= @kid.fname %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @kid.lname %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @kid.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @kid.age %>
+</p>
+
+<%= link_to @kid.parent.fname, @kid.parent if @kid.parent %>
+
+<%= link_to 'Edit', edit_kid_path(@kid) %> |
+<%= link_to 'Back', kids_path %>

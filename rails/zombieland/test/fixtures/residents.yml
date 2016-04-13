@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  recruitment_tally: 1
+  date_of_undeath: MyString
+  date: MyString
+  on_diet: false
+  picture: MyString
+
+two:
+  name: MyString
+  recruitment_tally: 1
+  date_of_undeath: MyString
+  date: MyString
+  on_diet: false
+  picture: MyString
