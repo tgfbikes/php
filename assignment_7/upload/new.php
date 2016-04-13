@@ -19,6 +19,7 @@
           File:
           <input type="file" name="file">
           <div><?= errorMessageForField($errors, 'file_size'); ?></div>
+          <div><?= errorMessageForField($errors, 'file_type'); ?></div>
         </div>
         <div class="card-action">
           <button class="waves-effect btn teal accent-2" type="submit" name="submit">
