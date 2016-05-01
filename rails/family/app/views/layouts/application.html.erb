@@ -2,13 +2,31 @@
 <html>
 <head>
   <title>Family</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+          <%= link_to 'Family', root_path %>
+        </div>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Parents', parents_path %></li>
+        <li><%= link_to 'Kids', kids_path %></li>
+        <li><%= link_to 'New Parent', new_parent_path %></li>
+        <li><%= link_to 'New Kid', new_kid_path %></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
 
-<%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>

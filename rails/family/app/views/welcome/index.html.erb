@@ -1,1 +1,32 @@
-<h1>Hello Nick</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to the Family App</h1>
+    <p>This totally unique app will let you (as a parent) add yourself your children</p>
+  </div>
+</div>
+<main class="container">
+  <h3>Lets get started</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="btn btn-success">
+        <%= link_to 'All Parents', parents_path %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="btn btn-success">
+        <%= link_to 'All Kids', kids_path %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="btn btn-success">
+        <%= link_to 'New Parent', new_parent_path %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="btn btn-success">
+        <%= link_to 'New Kid', new_kid_path %>
+      </div>
+    </div>
+  </div>
+</main>
+
